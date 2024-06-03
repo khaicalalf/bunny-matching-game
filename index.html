@@ -15,6 +15,7 @@
             font-weight: normal;
             font-style: normal;
         }
+
         body,
         html {
             height: 100%;
@@ -30,7 +31,7 @@
         .gallery-container {
             display: none;
             flex: 1;
-            
+
             width: auto;
             margin-top: 50px;
             margin-bottom: 50px;
@@ -97,14 +98,15 @@
             height: 100%;
             object-fit: cover;
         }
-        #title{
+
+        #title {
             font-size: 64px;
             color: #E3765A;
         }
+
         #score,
         #time {
-
-            margin: 10px;
+            margin: 4px;
             font-size: 24px;
             color: #1E1E1E;
         }
@@ -114,6 +116,12 @@
             padding: 10px 20px;
             font-size: 64px;
             background-color: #E3765A;
+        }
+
+        #grid-title {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            
         }
 
         @media (min-width: 576px) {
@@ -149,10 +157,14 @@
     </div>
 
     <div class="gallery-container flex-column">
-        <div class="justify-content-left align-items-left flex-column">
-            <div id="score">Score: 0</div>
-            <div id="time">Time: 0 s</div>
+        <div id="grid-title">
+            <div class="justify-content-left align-items-left">
+                <div id="score">Score: 0</div>
+                <div id="time">Time: 0 s</div>
+            </div>
+            <div id="title">Bunny Matchin' Game</div>
         </div>
+
 
         <div class="gallery justify-content-center align-items-center" id="gallery">
 
@@ -247,7 +259,8 @@
                     clearInterval(timerInterval);
                     setTimeout(() => {
                         alert(
-                            `Game completed in ${Math.floor((Date.now() - startTime) / 1000)} seconds with a score of ${score}`);
+                            `Game completed in ${Math.floor((Date.now() - startTime) / 1000)} seconds with a score of ${score}`
+                            );
                     }, 500); // Delay to allow last flip animation to finish
                 }
             } else {
